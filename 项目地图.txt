@@ -1,0 +1,30 @@
+assets      放资源文件 js css img font
+components  放公共组件
+filter      过滤器
+pages       放页面组件
+config      配置文件
+router      路由
+store       状态管理
+app.vue     根组件
+main.js     入口文件
+技术栈：vue vuex vue-router mint-ui axios 
+组件
+    |-home          首页
+        |-navbar    顶部导航            
+        |-banner    轮播
+        |-raglist   娃娃列表    
+        |-bottom    底部
+        |-totop     回到顶部
+    |-user          我的
+        |-navbar    顶部导航           
+        |-list      列表
+        |-bottom    底部               
+
+    |-machines      娃娃机列表
+        |-navbar    顶部导航
+        |-machinelist 列表
+        |-bottom    底部  
+
+    |-gettoy        抓娃娃
+        |-videos    视屏
+        |-navbar    顶部导航
