@@ -14,21 +14,92 @@
             <li>
                 <div class="left iconfont icon-jinbi1"></div>                
                 <div class="content">
-                    <div class="coin">我的娃娃币</div>
+                    <div class="explain">我的娃娃币</div>
                     <div class="num">00</div>
                     <div class="right">
-                        <span>充值</span>
+                        <span>充值</span>                        
                         <span class="iconfont icon-left-copy-copy"></span>
                     </div>
                 </div>
             </li>
             <li>
-                <div class="left iconfont icon-jinbi1"></div>                
+                <div class="left iconfont icon-zhangdan-copy"></div>                
                 <div class="content">
-                    <div class="coin">我的娃娃币</div>
-                    <div class="num">00</div>
+                    <div class="explain">娃娃币账单</div>
                     <div class="right">
-                        <span>充值</span>
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-jifen-copy"></div>                
+                <div class="content">
+                    <div class="explain">我的积分</div>
+                    <div class="num">00</div>                                        
+                    <div class="right">
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-wanju"></div>                
+                <div class="content">
+                    <div class="explain">我的娃娃</div>
+                    <div class="right">
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-yaoqingma"></div>                
+                <div class="content">
+                    <div class="explain">我的邀请码</div>
+                    <div class="right">
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-shuru"></div>                
+                <div class="content">
+                    <div class="explain">输入邀请码</div>
+                    <div class="right">
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-xiaoxi1"></div>                
+                <div class="content">
+                    <div class="explain">消息</div>
+                    <div class="right">
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-shezhi1"></div>                
+                <div class="content">
+                    <div class="explain">设置</div>
+                    <div class="right">
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-kefu"></div>                
+                <div class="content">
+                    <div class="explain">客服</div>
+                    <div class="right">
+                        <span class="iconfont icon-left-copy-copy"></span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left iconfont icon-fankui"></div>                
+                <div class="content">
+                    <div class="explain">反馈</div>
+                    <div class="right">
                         <span class="iconfont icon-left-copy-copy"></span>
                     </div>
                 </div>
@@ -55,13 +126,13 @@ export default {
     .user {
         .header {
             margin-top: .1rem;
-            height: 1.2rem;
+            height: 1.6rem;
             background-color: #fff;             
             .head-img {
-                width: .6rem;
-                height: .6rem;
+                width: 1rem;
+                height: 1rem;
                 margin: 0 auto;
-                border-radius: .4rem;
+                border-radius: .5rem;
                 overflow: hidden;   
                 img{
                     width: 100%;
@@ -85,7 +156,7 @@ export default {
             width: 100%;
             margin-top: .1rem;
             li {
-                height: .4rem;
+                height: .8rem;
                 width: 6.9rem;
                 padding: 0 .3rem;            
                 display: flex;
@@ -99,13 +170,14 @@ export default {
                     width: .3rem;
                 }
                 .content {
-                    height: .4rem;
+                    height: .8rem;
                     width: 6.6rem;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     border-bottom: 1px #ccc solid;
-                    .coin {
+                    font-size: .24rem;
+                    .explain {
                         width: 3rem;
                     }
                     .num {
@@ -116,10 +188,21 @@ export default {
                         width: 3.3rem;
                         text-align: right;
                         .iconfont {
-                           font-size: .16rem;
+                           font-size: .24rem;
                            color: #ccc;
                         }
                     }
+                }
+            }
+            li:nth-child(4),li:nth-child(6){
+                margin-bottom: .1rem;
+                .content {
+                    border-bottom: none;
+                }
+            }
+            li:last-child{
+                .content {
+                    border-bottom: none;
                 }
             }
         }
