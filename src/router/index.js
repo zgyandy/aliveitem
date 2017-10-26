@@ -27,7 +27,7 @@ export default new Router({
             name: 'user',
             component: user,
         },{
-            path: '/gettoy/:toy_id?&mac_id?',
+            path: '/gettoy/:toy_id?&:mac_id?',
             name: 'gettoy',
             component: gettoy,
         }
