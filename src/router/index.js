@@ -19,7 +19,7 @@ export default new Router({
             name: 'home',
             component: home
         },{
-            path: "/machines",
+            path: "/machines/:toy_id?",
             name: "machines",
             component: machines
         },{
@@ -27,7 +27,7 @@ export default new Router({
             name: 'user',
             component: user,
         },{
-            path: '/gettoy',
+            path: '/gettoy/:toy_id?&mac_id?',
             name: 'gettoy',
             component: gettoy,
         }
