@@ -13,44 +13,32 @@ import md5 from './md5.min'
 // http://m.baishiapp.com          H5页面
 
 if (process.env.NODE_ENV == 'production') {
-    var baseUrl = 'http://api.baishiapp.com'; //正式
+    var baseUrl = 'http://api.baishiapp.com';           //正式
 
     var getUrl = 'http://www.baishiapp.com';
 } else if (process.env.NODE_ENV == 'test') {
-    var baseUrl = 'http://test.api.baishiapp.com'; //测试
+    var baseUrl = 'http://test.api.baishiapp.com';      //测试
 
     var getUrl = 'http://test.www.baishiapp.com';
 } else {
-    var baseUrl = 'http://tan.api.baishiapp.com:8801'; //开发
+    var baseUrl = 'http://tan.api.baishiapp.com:8801';  //开发
 
     var getUrl = 'http://test.www.baishiapp.com';
 }
 
-// var getUrl = 'http://www.baishiapp.com';
-
-//所有请求 都要添加
-// var token = '';
-// let header = {
-//     "Content-Type": "application/x-www-form-urlencoded",
-//     version: 'v1.5.0',
-//     channel: 'h5',
-//     token: token,
-// }
-
 var token = '';
-//请求对象
+// psot请求对象
 var axios = axi.create({
     baseURL: baseUrl,
     timeout: 8000,
 });
-
-
+// get请求对象
 var getaxios = axi.create({
     baseURL: getUrl,
     timeout: 8000,
 });
 
-
+// get请求获取数据
 var getData = (params) => {
     return getaxios.get(params.url).then(response => {
         params.success && params.success(response.data);
@@ -63,16 +51,16 @@ var getData = (params) => {
 
 }
 
-
 /**
  * POST
  * @param {url,data,success,fail} refs  type:object
  */
-var postdata = (refs) => {
+// post请求获取数据
+var postData = (refs) => {
     token = sessionStorage.getItem('token') || token;
-    // alert(token);
+    // 判断是否传参
     if (refs.data) {
-        var data = new FormData();
+        var data = new FormData(); // 创建FromData对象，
         var tempS = '';
         var tempArray = [];
 
@@ -95,11 +83,9 @@ var postdata = (refs) => {
         t = parseInt(t / 1000);
         data.append('signs', md5(singTemp));
         data.append('req_time', t);
-        // console.log(tempS);
     } else {
-
+        
     }
-
     return axios({
         method: 'post',
         url: refs.url,
@@ -135,9 +121,6 @@ var postdata = (refs) => {
             refs.success && refs.success(res.data);
         }
 
-        console.log(refs.url);
-        console.log(res);
-
     }).catch(error => {
         refs.fail && refs.fail(error);
 
@@ -145,4 +128,4 @@ var postdata = (refs) => {
     });
 }
 
-export { postdata, getData };
+export { postData, getData };
