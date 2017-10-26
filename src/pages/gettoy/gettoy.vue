@@ -21,7 +21,6 @@
         </nav>
         <!-- 视屏 -->
         <videos></videos>
-
         <!-- 玩具详情 -->
         <toydetail toyid="toyid"></toydetail>
     </div>

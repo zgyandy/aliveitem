@@ -28,3 +28,5 @@ main.js     入口文件
     |-gettoy        抓娃娃
         |-videos    视屏
         |-navbar    顶部导航
+
+    进度->home组件->user组件->machines组件->gettoy组件->状态管理->

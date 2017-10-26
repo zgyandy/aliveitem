@@ -13,21 +13,18 @@ import './assets/iconfont/iconfont.css'
 import './config/rem.js'
 // 引入初始化样式
 import "./assets/css/common.css"
+// 引入整个mint-ui
+// import MintUI from 'mint-ui'
+// import 'mint-ui/lib/style.css'
+// Vue.use(MintUI)
 
-import MintUI from 'mint-ui'
-import 'mint-ui/lib/style.css'
-
-Vue.use(MintUI)
-// 懒加载
+// 懒加载 引入使用的组件，减少项目体积
 import { Lazyload } from 'mint-ui'
 Vue.use(Lazyload)
 // 轮播
 import { Swipe, SwipeItem } from 'mint-ui'
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
-// navbar顶部导航
-import { Header } from 'mint-ui'
-Vue.component(Header.name, Header)
 
 // 引过滤器
 import filters from "./filters/index.js"

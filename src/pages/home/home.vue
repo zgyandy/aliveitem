@@ -33,7 +33,5 @@ import raglist from "@/components/raglist/raglist.vue"
 </script>
 
 <style lang="scss" scoped>
-    .home {
-        
-    }
+
 </style>

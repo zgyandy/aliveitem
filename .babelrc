@@ -8,7 +8,12 @@
     }],
     "stage-2"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [["component", [ // 使用mint-ui部分组件，减少项目体积
+    {
+      "libraryName": "mint-ui",
+      "style": true
+    }
+  ]]],
   "env": {
     "test": {
       "presets": ["env", "stage-2"],
