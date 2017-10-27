@@ -1,7 +1,9 @@
 <template>
     <div class="video">
         <div class="desk">
-            <canvas id="video-canvas"></canvas>
+            <div class="box">
+                <canvas id="video-canvas"></canvas>
+            </div>
             <!-- 镜头切换 -->
             <div class="shot">
                 <div class="eye iconfont icon-shexiangtou" @click.stop="change"></div>
@@ -95,9 +97,14 @@ export default {
         overflow: hidden;
         width: 6.9rem;
         margin: 0 .3rem;
-        #video-canvas {
-            width: 6.9rem;
+        .box {
             height: 9.2rem;
+            width: 6.9rem;
+            overflow: hidden;
+            #video-canvas {
+                height: 9.2rem;
+                width: 6.9rem;
+            }
         }
         .desk {
             position: relative;

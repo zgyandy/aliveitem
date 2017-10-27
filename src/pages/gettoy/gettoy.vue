@@ -60,16 +60,19 @@ export default {
             .left {
                 .iconfont {
                     color: #fff;
+                    font-size: .24rem;
                 }
             }
             .right {
                 height: .8rem;
                 width: 3rem;
                 display: flex;
+                align-items: center;
                 background-color: #fff;
                 .players {
-                    height: .8rem;
+                    // height: .8rem;
                     width: .6rem;
+                    text-align: center;
                 }
                 .player-list {
                     height: .8rem;
