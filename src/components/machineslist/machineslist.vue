@@ -21,7 +21,8 @@
                         <div>状态：游戏中</div>
                         <div>排队人数：3</div>
                     </div>
-                    <button @click="scribe($event)">预约</button>
+                    <div v-show="key != machId" class="knob" @click.stop="scribe(key)">预约</div>
+                    <div v-show="key == machId & blScribe" class="scribed">取消预约</div>
                 </div>
             </li>
         </ul>
@@ -34,14 +35,20 @@ export default {
         return{
             machlist: [1,2,3,4,5,6],    // 娃娃机列表
             blScribe: false,            // 是否是预约状态
+            machId: '',
         }
+    },
+    mounted () {
+          this.machId = sessionStorage.getItem("machId")
     },
     methods:{
         toGetToy(id){
             this.$router.push({name:"gettoy",params:{toy_id: this.$route.params.toy_id, mac_id: id}})
         },
-        scribe(e){
-            
+        scribe(id){
+            this.blScribe = !this.blScribe;
+            sessionStorage.setItem('machId',id)
+            console.log(id)
         }
     }
 }
@@ -103,7 +110,7 @@ export default {
                     .left {
                         height: .8rem;
                     }
-                    button {
+                    .knob {
                         height: .6rem;
                         width: 2rem;
                         background-color: #0ff;
@@ -111,6 +118,19 @@ export default {
                         border: none;
                         color: #fff;
                         font-size: .24rem;
+                        text-align: center;
+                        line-height: .6rem;
+                    }
+                    .scribed {
+                        height: .6rem;
+                        width: 2rem;
+                        background-color: #f00;
+                        border-radius: .2rem;
+                        border: none;
+                        color: #fff;
+                        font-size: .24rem;
+                        text-align: center;
+                        line-height: .6rem;
                     }
                 }
             }

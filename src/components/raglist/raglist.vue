@@ -38,6 +38,7 @@ export default {
             line-height: .6rem;
         }
         .toy-list {
+            width: 6.9rem;
             display: flex;
             flex-wrap: wrap;
             margin-top: .2rem;

@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import JSMpeg from "../../assets/js/jsmpeg.min.js";
-// var bullet = document.getElementById("bullet")
+import JSMpeg from "../../assets/js/jsmpeg.min.js"
+import {register} from "@/serve/postdata.js"
 export default {
     name: "videos",
     data() {
@@ -61,8 +61,12 @@ export default {
         });
 
         var bullet = document.getElementById("bullet");
-        console.log(bullet)
         bullet.style.position = bullet.offsetWidth*.01 + "rem";
+        register({success:(res)=>{
+            console.log(res);
+        },fail:(res)=>{
+            console.log(res)
+        }})
     },
     methods: {
         change (){
