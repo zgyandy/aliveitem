@@ -10,7 +10,7 @@ main.js     入口文件
 技术栈：vue vuex vue-router mint-ui axios 
 组件
     |-home          首页
-        |-navbar    顶部导航            
+        |-navbar    顶部导航
         |-banner    轮播
         |-raglist   娃娃列表    
         |-bottom    底部
