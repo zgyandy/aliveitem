@@ -38,13 +38,13 @@ export default {
             line-height: .6rem;
         }
         .toy-list {
-            width: 6.9rem;
-            display: flex;
-            flex-wrap: wrap;
+            width:  7rem;
             margin-top: .2rem;
+            overflow: hidden;
             li {
                 height: 3.5rem;
                 width: 3.4rem;
+                float: left;
                 margin-bottom: .2rem;
                 background-color: #fff;
                 .num {

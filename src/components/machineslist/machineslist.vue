@@ -87,14 +87,13 @@ export default {
         .mach-list {
             width: 7rem;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            overflow: hidden;
             li {
                 height: 5rem;
                 width: 3.4rem;
                 background-color: #fff;
                 margin-bottom: .2rem;
+                float: left;
                 .mach-status {
                     height: 4.2rem;
                     overflow: hidden;

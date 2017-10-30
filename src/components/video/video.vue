@@ -37,7 +37,7 @@ export default {
     name: "videos",
     data() {
         return {
-			address: '192.168.1.125:9501',  // 视频流地址
+			address: '192.168.0.105:9501',  // 视频流地址
             camera_type: 'main',            // 视口规格
             ws_url: '',                     // ws视频流地址
             poster_url : '',                // 
