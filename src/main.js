@@ -25,7 +25,13 @@ Vue.use(Lazyload)
 import { Swipe, SwipeItem } from 'mint-ui'
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
-
+// 选项卡
+import { Navbar, TabItem } from 'mint-ui'
+Vue.component(Navbar.name, Navbar)
+Vue.component(TabItem.name, TabItem)
+import { TabContainer, TabContainerItem } from 'mint-ui'
+Vue.component(TabContainer.name, TabContainer)
+Vue.component(TabContainerItem.name, TabContainerItem)
 // 引过滤器
 import filters from "./filters/index.js"
 Object.keys(filters).forEach(key => Vue.filter(key, filters[key]))

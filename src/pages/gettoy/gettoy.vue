@@ -60,7 +60,7 @@ export default {
             .left {
                 .iconfont {
                     color: #fff;
-                    font-size: .24rem;
+                    font-size: .3rem;
                 }
             }
             .right {
