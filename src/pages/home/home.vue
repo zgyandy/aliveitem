@@ -33,5 +33,8 @@ import raglist from "@/components/raglist/raglist.vue"
 </script>
 
 <style lang="scss" scoped>
-
+    .home {
+        width: 7.5rem;
+        overflow: hidden;
+    }
 </style>

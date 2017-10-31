@@ -2,7 +2,7 @@
     <div class="rag-list">
         <!-- <h5 class="title">玩具列表</h5> -->
         <ul class="toy-list">
-            <li @click="toGet(item)" v-for="(item,key) in ragList" :key="key">
+            <li @click.stop="toGet(item)" v-for="(item,key) in ragList" :key="key">
                 <div class="num">娃娃机数量</div>
                 <img src="../../assets/images/demo1.png" alt="">
                 <h6>玩具名</h6>
@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
     .rag-list {
-        width: 7.5rem;
+        width: 7rem;
         padding: 0 .25rem;
         .title {
             height: .6rem;

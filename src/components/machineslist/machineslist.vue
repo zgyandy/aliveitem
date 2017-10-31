@@ -12,7 +12,7 @@
         </div>
         <ul class="mach-list">
             <li :key="key" v-for="(item,key) in machlist">
-                <div class="mach-status"  @click="toGetToy(item)">
+                <div class="mach-status"  @click.stop="toGetToy(item)">
                     <img src="../../assets/images/demo2.png" alt="">
                 </div>
                 <div class="status">

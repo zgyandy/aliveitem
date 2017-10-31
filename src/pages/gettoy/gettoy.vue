@@ -2,7 +2,7 @@
     <div class="gettoy">
         <nav class="navbar">
             <div class="left">
-                <span class="iconfont icon-svg-" @click="go"></span>
+                <span class="iconfont icon-svg-" @click.stop="go"></span>
             </div>
             <div class="right">
                 <div class="players">房间人数</div>
