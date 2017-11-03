@@ -8,6 +8,8 @@ store       状态管理
 app.vue     根组件
 main.js     入口文件
 技术栈：vue vuex vue-router mint-ui axios 
+navbar z-index 99
+mark   z-index 120
 组件
     |-home          首页
         |-navbar    顶部导航

@@ -12,6 +12,23 @@ import md5 from './md5.min'
 // http://www.baishiapp.com:9091		//后台
 // http://m.baishiapp.com          H5页面
 
+// 配置axios 读取数据和返回数据时，可以自定义一段代码
+axi.interceptors.request.use(function(config){
+	// 请求时显示loading 
+	store.dispatch("showLoading");
+	return config;
+},function(error){
+	return Promise.reject(error);
+});
+
+axi.interceptors.response.use(function(response){
+	// 获取数据后隐藏loading
+	store.dispatch("hideLoading");
+	return response;
+},function(error){
+	return Promise.reject(error);
+});
+
 if (process.env.NODE_ENV == 'production') {
     var baseUrl = 'http://api.baishiapp.com';           //正式
 

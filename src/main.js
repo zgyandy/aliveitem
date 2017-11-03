@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // 引入状态管理
-import store from "./store/index.js";
+import store from "./store/index.js"
 
 // 引入矢量图标
 import './assets/iconfont/iconfont.css'
@@ -43,6 +43,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
