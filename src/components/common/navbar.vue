@@ -6,7 +6,7 @@
                 <div v-show="!home" class="iconfont icon-svg-" @click.stop="go"></div>
                 <div v-show="home" class="iconfont icon-wodecopy" @click.stop="toUser"></div> 
                 <div class="content">{{content}}</div>
-                <div class="iconfont"></div>
+                <div class="iconfont icon-fenxiang"></div>
             </div>
         </div>
     </div>

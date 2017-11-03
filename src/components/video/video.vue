@@ -14,14 +14,14 @@
             <div class="control-desk">
                     <div class="move-desk">
                         <div class="center move">
-                            <div class="item iconfont icon-shang"  @touchstart.stop="moveUp" @touchend.stop="endUp"></div>
+                            <div class="item iconfont icon-shang"  @touchstart.stop="control_start_w" @touchend.stop="control_end_w" ></div>
                         </div>
                         <div class="around move">
-                            <div class="item iconfont icon-svg-"></div>
-                            <div class="item iconfont icon-left-copy-copy"></div>
+                            <div class="item iconfont icon-svg-" @touchstart.stop="control_start_a" @touchend.stop="control_end_a"></div>
+                            <div class="item iconfont icon-left-copy-copy" @touchstart.stop="control_start_d" @touchend.stop="control_end_d"></div>
                         </div>
                         <div class="move center">
-                            <div class="item iconfont icon-xia"></div>
+                            <div class="item iconfont icon-xia" @touchstart.stop="control_start_s" @touchend.stop="control_end_s"></div>
                         </div>
                     </div>
                 <div class="get">抓</div>
@@ -33,11 +33,14 @@
 <script>
 import JSMpeg from "../../assets/js/jsmpeg.min.js"
 import {register} from "@/serve/postdata.js"
+
+let w,s,a,d;
+
 export default {
     name: "videos",
     data() {
         return {
-			address: '192.168.0.105:9501',  // 视频流地址
+			address: 'xybingbing.oicp.net:9501',  // 视频流地址
             camera_type: 'main',            // 视口规格
             ws_url: '',                     // ws视频流地址
             poster_url : '',                // 
@@ -84,12 +87,62 @@ export default {
             this.player.source.shouldAttemptReconnect=false;
             	this.player.play();
         },
-        moveUp () {
-            console.log("up")
-        },  
-        endUp (){
-
-        }
+        // 向上
+      control_start_w:function (e) {
+      	w=setInterval(() => {
+      		this.player.source.socket.send(JSON.stringify({"control":"w","state":1}));
+      	},100);
+      	e.preventDefault();
+      	return false;
+      },
+      control_end_w:function (e) {
+        window.clearInterval(w);
+        this.player.source.socket.send(JSON.stringify({"control":"w","state":0}));
+        e.preventDefault();
+      	return false;
+      },
+       // 向下
+      control_start_s:function (e) {
+        s=setInterval(() => {
+      		this.player.source.socket.send(JSON.stringify({"control":"s","state":1}));
+      	},100);
+      	e.preventDefault();
+      	return false;
+      },
+      control_end_s:function (e) {
+        window.clearInterval(s);
+        this.player.source.socket.send(JSON.stringify({"control":"s","state":0}));
+        e.preventDefault();
+      	return false;
+      },
+       // 向左
+      control_start_a:function (e) {
+        a=setInterval(() => {
+      		this.player.source.socket.send(JSON.stringify({"control":"a","state":1}));
+      	},100);
+      	e.preventDefault();
+      	return false;
+      },
+      control_end_a:function (e){
+        window.clearInterval(a);
+        this.player.source.socket.send(JSON.stringify({"control":"a","state":0}));
+        e.preventDefault();
+      	return false;
+      },
+       // 向右
+      control_start_d:function (e) {
+        d=setInterval(() => {
+      		this.player.source.socket.send(JSON.stringify({"control":"d","state":1}));
+      	},100);
+      	e.preventDefault();
+      	return false;
+      },
+      control_end_d:function (e){
+        window.clearInterval(d);
+        this.player.source.socket.send(JSON.stringify({"control":"d","state":0}));
+        e.preventDefault();
+      	return false;
+      },
     }
 };
 </script>
